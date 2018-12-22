@@ -12,3 +12,8 @@ Name: namespace
 Description: Attach namespace information to R or Rmd files
 Binding: pretty_addin
 Interactive: false
+
+Name: collapse
+Description: Add named tags to file for collapsing on Roxygen2 preamble and functions
+Binding: code_collapse
+Interactive: false
