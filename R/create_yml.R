@@ -1,3 +1,4 @@
+# create_yml roxy [sinew] ---- 
 #' @title Create _sinewconfig.yml
 #' @description Create _sinewconfig.yml file in project root directory
 #' @return nothing
@@ -9,6 +10,7 @@
 #' @export
 #' @author Jonathan Sidi
 #' @importFrom rstudioapi getActiveProject
+# create_yml function [sinew] ----
 create_yml <- function() {
   if (is.null(rstudioapi::getActiveProject())) {
     stop("Not in RStudio Project")

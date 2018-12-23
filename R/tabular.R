@@ -1,3 +1,4 @@
+# tabular roxy [sinew] ---- 
 #' @title Tabular for roxygen2
 #' @description Convert data.frame to roxygen2 tabular format
 #' @param df data.frame to convert to table
@@ -10,6 +11,7 @@
 #' @examples
 #' cat(tabular(mtcars[1:5, 1:5]))
 #' cat(tabular(mtcars[1:5, 1:5],header=FALSE))
+# tabular function [sinew] ----
 tabular <- function(df, header=TRUE, ...) {
   stopifnot(is.data.frame(df))
 

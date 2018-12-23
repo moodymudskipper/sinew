@@ -1,3 +1,4 @@
+# rmOxygen roxy [sinew] ---- 
 #' @title Remove roxygen2 Comments From an .R File
 #' @description Strips .R files of roxygen2 style comments (#')
 #' @param .file, path to an .R file, character vector of length 1
@@ -9,6 +10,7 @@
 #' }
 #' @export
 #' @import rstudioapi
+# rmOxygen function [sinew] ----
 rmOxygen <- function(.file) {
   if (!file.exists(.file)) stop("Enter a valid path to .R file!", call. = FALSE)
   if (!endsWith(.file, ".R")) {

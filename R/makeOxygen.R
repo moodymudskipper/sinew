@@ -1,3 +1,4 @@
+# makeOxygen roxy [sinew] ---- 
 #' @title Creates skeleton roxygen2 with information from within function script
 #' @description Creates roxygen2 skeleton including title, description, import and other fields
 #' @param obj function or name of function
@@ -42,6 +43,7 @@
 #' @export
 #' @examples
 #' makeOxygen(stats::lm)
+# makeOxygen function [sinew] ----
 makeOxygen <- function(obj, add_default=TRUE, add_fields=sinew_opts$get("add_fields"), use_dictionary=NULL, print=TRUE, ...) {
   header_add <- sinew_opts$get()
 

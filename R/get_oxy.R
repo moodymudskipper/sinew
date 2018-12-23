@@ -1,3 +1,4 @@
+# get_oxy function [sinew] ---- 
 get_oxy <- function(this_oxy) {
   this_oxy <- gsub("\\n$", "", strsplit(this_oxy, "#' @")[[1]])
   this_oxy <- this_oxy[nchar(this_oxy) > 0]

@@ -1,3 +1,4 @@
+# interOxyAddIn roxy [sinew] ---- 
 #' @title Interactive add-in
 #' @description Launches an interactive addin for insertion of roxygen2 comments in files.
 #' Allows selection of extra parameters for \code{makeOxygen}
@@ -19,6 +20,7 @@
 #' @import shiny
 #' @import miniUI
 #' @importFrom utils find
+# interOxyAddIn function [sinew] ----
 interOxyAddIn <- function() {
   nenv <- new.env()
 

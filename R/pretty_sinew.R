@@ -1,3 +1,4 @@
+# pretty_sinew roxy [sinew] ---- 
 #' @title Convert File to R directory with pretty and oxygen
 #' @description ONe function to run pretty_namespace, untangle and makeOxyFile
 #' @param con character, path to file or directory that contains script, Default: NULL
@@ -10,6 +11,7 @@
 #' @rdname pretty_sinew
 #' @export 
 #' @author Jonathan Sidi
+# pretty_sinew function [sinew] ----
 pretty_sinew <- function(con = NULL,text = NULL,dir.out = NULL, keep.body = TRUE){
 
   if(!is.null(con)){

@@ -1,3 +1,4 @@
+# something function [sinew] ---- 
 something <- function(NMPATH) {
   repeat{
     pkgs <- setdiff(loadedNamespaces(), c(NMPATH, "lazyeval"))
@@ -9,6 +10,7 @@ something <- function(NMPATH) {
   }
 }
 
+# something.dyn function [sinew] ---- 
 something.dyn <- function(DYNPATH) {
   dynpath <- unlist(sapply(library.dynam(), "[", 2))
 

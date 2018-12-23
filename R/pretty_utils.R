@@ -1,3 +1,4 @@
+# pretty_parse function [sinew] ---- 
 pretty_parse <- function(txt){
   
   p <- parse(text = txt)
@@ -20,8 +21,10 @@ pretty_parse <- function(txt){
   
 }
 
+# pretty_shift roxy [sinew] ---- 
 #' @importFrom crayon red
 #' @importFrom stringi stri_sub
+# pretty_shift function [sinew] ----
 pretty_shift <- function(txt, sym.funs, nm, overwrite, force, ignore){
   
   sym.funs <- pretty_manip(sym.funs, force, ignore)
@@ -79,6 +82,7 @@ pretty_shift <- function(txt, sym.funs, nm, overwrite, force, ignore){
   sym.funs
 }
 
+# pretty_manip function [sinew] ---- 
 pretty_manip <- function(sym.funs, force, ignore){
   
   sym.funs$action <- ''
@@ -96,7 +100,9 @@ pretty_manip <- function(sym.funs, force, ignore){
   sym.funs
 }
 
+# pretty_merge roxy [sinew] ---- 
 #' @importFrom cli symbol
+# pretty_merge function [sinew] ----
 pretty_merge <- function(e1,e2,action = 'relpace'){
 
   e2 <- sapply(names(e2),function(x){
@@ -126,8 +132,10 @@ pretty_merge <- function(e1,e2,action = 'relpace'){
   e1[order(e1$id),]
 }
 
+# pretty_find roxy [sinew] ---- 
 #' @importFrom sos findFn
 #' @importFrom utils help.search menu
+# pretty_find function [sinew] ----
 pretty_find <- function(NMPATH, sos, sym.funs, funs, ask, askenv){
   
   check_global <- ls(envir = get(search()[1]))
@@ -211,12 +219,15 @@ pretty_find <- function(NMPATH, sos, sym.funs, funs, ask, askenv){
   
 }
 
+# enframe_list function [sinew] ---- 
 enframe_list <- function(x){
   do.call('rbind',lapply(names(x),function(y) data.frame(force_ns = y, text = x[[y]],stringsAsFactors = FALSE)))
 }
 
+# pretty_print roxy [sinew] ---- 
 #' @importFrom crayon red strip_style
 #' @importFrom cli symbol
+# pretty_print function [sinew] ----
 pretty_print <- function(obj,file,chunk=NULL){
   
   if(!sinew_opts$get('pretty_print'))
@@ -271,6 +282,7 @@ pretty_print <- function(obj,file,chunk=NULL){
   )
 }
 
+# numpad function [sinew] ---- 
 numpad <- function(x){
   
   pad <- max(nchar(as.character(x)))
@@ -284,6 +296,7 @@ numpad <- function(x){
   ret
 }
 
+# mf function [sinew] ---- 
 mf <- function(x, pat) {
   ns <- try(
     {

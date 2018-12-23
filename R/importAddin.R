@@ -1,4 +1,6 @@
+# importAddin roxy [sinew] ---- 
 #' @importFrom rstudioapi getActiveDocumentContext
+# importAddin function [sinew] ----
 importAddin <- function() {
   # Get the document context.
   context <- rstudioapi::getActiveDocumentContext()

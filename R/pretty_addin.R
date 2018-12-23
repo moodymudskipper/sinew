@@ -1,3 +1,4 @@
+# pretty_addin roxy [sinew] ---- 
 #' @title Interactively run pretty functions in R and Rmd files
 #' @description Addin that scans the file source contents and attaches namespace
 #' information.
@@ -15,6 +16,7 @@
 #' @rdname pretty_addin
 #' @importFrom rstudioapi getSourceEditorContext sendToConsole
 #' @export
+# pretty_addin function [sinew] ----
 pretty_addin <- function(){
   
   adc <- rstudioapi::getSourceEditorContext()
@@ -29,7 +31,9 @@ pretty_addin <- function(){
   
 }
 
+# pretty_addin_r roxy [sinew] ---- 
 #' @importFrom rstudioapi modifyRange
+# pretty_addin_r function [sinew] ----
 pretty_addin_r <- function(adc){
   
   file_path <- adc$path
@@ -55,7 +59,9 @@ pretty_addin_r <- function(adc){
   
 }
 
+# pretty_addin_rmd roxy [sinew] ---- 
 #' @importFrom rstudioapi modifyRange
+# pretty_addin_rmd function [sinew] ----
 pretty_addin_rmd <- function(adc){
   
   file_path <- adc$path

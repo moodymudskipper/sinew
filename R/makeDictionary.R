@@ -1,3 +1,4 @@
+# makeDictionary roxy [sinew] ---- 
 #' @title Parse package R files to create dictionary of unique parameter definitions
 #' @description Given list of R files function returns roxygen2 template consisting of intersecting
 #' parameter definitions
@@ -7,6 +8,7 @@
 #' @export
 #' @examples
 #' makeDictionary('R')
+# makeDictionary function [sinew] ----
 makeDictionary <- function(path, save_path=FALSE) {
   if (is.null(names(path))) names(path) <- sprintf("Dictionary-%s", 1:length(path))
 

@@ -15,5 +15,5 @@ Interactive: false
 
 Name: collapse
 Description: Add named tags to file for collapsing on Roxygen2 preamble and functions
-Binding: code_collapse
+Binding: code_collapse_addin
 Interactive: false

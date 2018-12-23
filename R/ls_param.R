@@ -1,3 +1,4 @@
+# ls_param roxy [sinew] ---- 
 #' @title Return roxygen2 parameter calls from parameter dictionary
 #' @description Return roxygen2 parameter calls from the intersection of the parameters listed in
 #'  the package dictionary and the formals of a function
@@ -10,6 +11,7 @@
 #' dict_loc=file.path(repo,'man-roxygen/Dictionary-1.R')
 #' ls_param(sinew::makeOxygen,dictionary=dict_loc)
 #' @export
+# ls_param function [sinew] ----
 ls_param <- function(obj, dictionary="man-roxygen/Dictionary-1.R", print=TRUE) {
   dictionary_lines <- readLines(dictionary, warn = FALSE)
   dictionary_lines <- grep("#' @param ", dictionary_lines, value = TRUE)

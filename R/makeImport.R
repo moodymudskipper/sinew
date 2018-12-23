@@ -1,3 +1,4 @@
+# makeImport roxy [sinew] ---- 
 #' @title Scrape R script to create namespace calls for R documentation
 #' @description Scrape r script to create namespace calls for roxygen2, namespace or description files
 #' @param script character, connection to pass to readLines, can be file path, directory path, url path
@@ -13,6 +14,7 @@
 #' @export
 #' @importFrom utils installed.packages capture.output getParseData
 #' @importFrom tools file_ext
+# makeImport function [sinew] ----
 makeImport <- function(script, cut=NULL, print=TRUE, format="oxygen", desc_loc=NULL) {
   rInst <- paste0(row.names(utils::installed.packages()), "::")
 

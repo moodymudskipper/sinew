@@ -1,3 +1,4 @@
+# pretty_rmd roxy [sinew] ---- 
 #' @title Attach namespacing to Rmarkdown chunks
 #' @description Apply pretty_namespace to Rmarkdown document
 #' @param input character, path to input Rmd file 
@@ -24,6 +25,7 @@
 #' @importFrom rstudioapi navigateToFile
 #' @importFrom utils select.list
 #' @author Jonathan Sidi
+# pretty_rmd function [sinew] ----
 pretty_rmd <- function(input, 
                        output = tempfile(fileext = '.Rmd'), 
                        open_output = TRUE, 
@@ -59,6 +61,7 @@ pretty_rmd <- function(input,
   invisible(x)
 }
 
+# list_chunks function [sinew] ---- 
 list_chunks <- function(x){
   
   FROM <- grep('^```\\{(.*?)r',x)+1
@@ -67,6 +70,7 @@ list_chunks <- function(x){
   mapply(seq,from=FROM,to=TO)
 }
 
+# rm_lib_chunk function [sinew] ---- 
 rm_lib_chunk <- function(x){
   
   this <- grep('^```(.*?)sinew libraries',x)
@@ -79,6 +83,7 @@ rm_lib_chunk <- function(x){
   x
 }
 
+# pretty_rmd_library function [sinew] ---- 
 pretty_rmd_library <- function(x, idx, askenv, input, chunks,...){
   
   userlibs <- gsub('library\\(|\\)','',grep('library\\((.*?)\\)',x,value = TRUE))
@@ -133,6 +138,7 @@ pretty_rmd_library <- function(x, idx, askenv, input, chunks,...){
   x
 }
 
+# pretty_rmd_inline function [sinew] ---- 
 pretty_rmd_inline <- function(x, idx, askenv,input, chunks,...){
   
   if(!is.null(chunks)){

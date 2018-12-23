@@ -1,3 +1,4 @@
+# untangle_examples roxy [sinew] ---- 
 #' @title Convert examples blocks in roxygen2 header to script
 #' @description Converts and aggregates roxygen2 examples into a
 #' single output file.
@@ -8,6 +9,7 @@
 #' @export 
 #' @rdname untangle_examples
 #' @author Jonathan Sidi
+# untangle_examples function [sinew] ----
 untangle_examples <- function(input, output = './roxy_ex_to_file.R'){
   
   if (length(input) == 1L && file.info(input)$isdir) {

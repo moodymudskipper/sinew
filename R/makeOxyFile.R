@@ -1,3 +1,4 @@
+# makeOxyFile roxy [sinew] ---- 
 #' @title Inserts roxygen2 skeletons in file(s).
 #' @description Applies \code{makeOxygen} function to all functions/dataframes in supplied file(s)
 #' @param input character, vector of path(s) to one or more .R files, a path to directory containing .R files, Default: NULL
@@ -28,6 +29,7 @@
 #' @seealso \code{\link{makeOxygen}}
 #' @rdname makeOxyFile
 #' @importFrom rstudioapi isAvailable navigateToFile
+# makeOxyFile function [sinew] ----
 
 makeOxyFile <- function(input = NULL, overwrite = FALSE, verbose=TRUE, ...) {
   if (is.null(input)) input <- file.choose()
@@ -148,6 +150,7 @@ makeOxyFile <- function(input = NULL, overwrite = FALSE, verbose=TRUE, ...) {
   
 }
 
+# scan_for_content function [sinew] ---- 
 scan_for_content <- function(FILE, neg_msg = "No functions found in\n"){
   
   lines <- readLines(FILE, warn = FALSE)

@@ -1,3 +1,4 @@
+# pretty_namespace roxy [sinew] ---- 
 #' @title Append namespace to functions in script
 #' @description Autoappend namespace to functions in script by searchpath order
 #' @param con character, path to file or directory that contains script, Default: NULL
@@ -40,6 +41,7 @@
 #' @rdname pretty_namespace
 #' @export
 #' @author Jonathan Sidi
+# pretty_namespace function [sinew] ----
 pretty_namespace <- function(con = NULL,
                              text = NULL,
                              ask = TRUE,

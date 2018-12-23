@@ -1,4 +1,6 @@
+# prettify roxy [sinew] ---- 
 #' @importFrom crayon strip_style
+# prettify function [sinew] ----
 prettify <- function(TXT,force = NULL, ignore = NULL, overwrite = FALSE, sos = FALSE, ask = TRUE,askenv = NULL){
   
   SPATH <- basename(grep('library',searchpaths(),value = TRUE))
@@ -32,6 +34,7 @@ prettify <- function(TXT,force = NULL, ignore = NULL, overwrite = FALSE, sos = F
   RET
 }
 
+# prettify_elem function [sinew] ---- 
 prettify_elem <- function(nm,TXT,NMPATH,INST,DYNPATH,force = NULL, ignore = NULL, overwrite = FALSE, sos = FALSE, ask = TRUE, askenv = NULL) {
   
   txt <- TXT[[nm]]
@@ -71,6 +74,7 @@ prettify_elem <- function(nm,TXT,NMPATH,INST,DYNPATH,force = NULL, ignore = NULL
   
 }
 
+# pretty_setup function [sinew] ---- 
 pretty_setup <- function(con,text){
   
   if (is.null(text)) {

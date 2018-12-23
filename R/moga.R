@@ -1,3 +1,4 @@
+# moga roxy [sinew] ---- 
 #' @title Make Oxygen Great Again
 #' @description Update/append an R file that has roxygen2 headers already with updated information
 #' @param path character path to R file
@@ -12,6 +13,7 @@
 #'  moga('https://raw.githubusercontent.com/metrumresearchgroup/ggedit/master/R/aesColour.R')
 #' @rdname moga
 #' @export
+# moga function [sinew] ----
 moga <- function(path, ..., force.fields=NULL, dry.run=TRUE, overwrite=FALSE) {
   l <- readLines(path, warn = FALSE)
   fn_name <- sub("([^.]+)\\.[[:alnum:]]+$", "\\1", basename(path))

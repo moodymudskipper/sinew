@@ -1,3 +1,4 @@
+# oxygenAddin function [sinew] ---- 
 oxygenAddin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
   obj_name <- gsub("[\"\']", "", context$selection[[1]]$text)

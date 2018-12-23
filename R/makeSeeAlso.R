@@ -1,4 +1,6 @@
+# makeSeeAlso roxy [sinew] ---- 
 #' @importFrom utils help.search
+# makeSeeAlso function [sinew] ----
 makeSeeAlso <- function(obj, cutOFF=3) {
   x <- makeImport(obj, cut = cutOFF, print = FALSE)
   x <- grep("importFrom", strsplit(x, "#'")[[1]], value = TRUE)

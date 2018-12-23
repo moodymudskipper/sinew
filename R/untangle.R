@@ -1,3 +1,4 @@
+# untangle roxy [sinew] ---- 
 #' @title Split an R script by functions
 #' @description Split a R script with multiple functions into multiple single function R files.
 #' @param file character, path to R file, Default: ''
@@ -33,6 +34,7 @@
 #' @export
 #' @author Jonathan Sidi
 #' @importFrom utils getParseData
+# untangle function [sinew] ----
 untangle <- function(file = "", text = NULL, dir.out = NULL, keep.body = TRUE) {
   if (!is.null(text) & length(text) == 1) {
     text <- strsplit(text, "\n")[[1]]

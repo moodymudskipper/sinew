@@ -1,5 +1,7 @@
 # forked from https://github.com/yihui/knitr/blob/master/R/defaults.R
-new_defaults = function(value = list()) {
+
+# new_defaults function [sinew] ----
+new_defaults <- function(value = list()) {
   defaults = value
   
   get = function(name, default = FALSE, drop = TRUE) {
@@ -34,6 +36,7 @@ new_defaults = function(value = list()) {
   list(get = get, set = set, append = append, merge = merge, restore = restore)
 }
 
+# sinew_opts roxy [sinew] ----
 #' Default and current sinew options
 #'
 #' Options for functions in the sinew package. When running R code, the object \code{sinew_opts}
@@ -61,6 +64,7 @@ new_defaults = function(value = list()) {
 #'   \code{sinew_opts_current$get()}.
 #' @export
 #' @examples sinew_opts$get('add_fields')
+# sinew_opts function [sinew] ----
 sinew_opts <- new_defaults(list(
   add_fields = c("details", "examples", "seealso", "rdname", "export"),
   pretty_print = TRUE,
@@ -100,16 +104,20 @@ sinew_opts <- new_defaults(list(
   useDynLib = "PKG [ROUTINE_a ROUTINE_b]"
 ))
 
+# sinew_opts_current roxy [sinew] ---- 
 #' @rdname sinew_opts
+# sinew_opts_current function [sinew] ----
 #' @export
 sinew_opts_current <- new_defaults()
 
 # merge elements of y into x with the same names
+# merge_list function [sinew] ---- 
 merge_list <- function(x, y) {
   x[names(y)] <- y
   x
 }
 
+# setNames function [sinew] ---- 
 setNames <- function(object = nm, nm) {
   names(object) <- nm
   object

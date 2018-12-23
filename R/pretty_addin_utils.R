@@ -1,20 +1,25 @@
+# get_range_rows function [sinew] ---- 
 get_range_rows <- function(rng){
   
   c(as.numeric(rng[[1]])[1],
     as.numeric(rng[[2]])[1])
 }
 
+# get_range_cols function [sinew] ---- 
 get_range_cols <- function(rng){
   
   c(as.numeric(rng[[1]])[2],
     as.numeric(rng[[2]])[2])
 }
 
+# range_null function [sinew] ---- 
 range_null <- function(rng){
   (diff(get_range_rows(rng))==0)&(diff(get_range_cols(rng))==0)
 }
 
+# doc_range roxy [sinew] ---- 
 #' @importFrom rstudioapi document_range
+# doc_range function [sinew] ----
 doc_range <- function(adc){
   
   contents <- adc$contents
@@ -26,6 +31,7 @@ doc_range <- function(adc){
   )
 }
 
+# range_map function [sinew] ---- 
 range_map <- function(rng){
   rows <- get_range_rows(rng)
   cols <- get_range_cols(rng)
@@ -35,7 +41,9 @@ range_map <- function(rng){
   )
 }
 
+# pad_doc roxy [sinew] ---- 
 #' @importFrom rstudioapi insertText
+# pad_doc function [sinew] ----
 pad_doc <- function(adc,times){
   if( times > 0 ){
     pos <- Map(c, (length(adc$contents)+1):(length(adc$contents)+times), 1)
@@ -44,14 +52,17 @@ pad_doc <- function(adc,times){
   
 }
 
+# pad_width function [sinew] ---- 
 pad_width <- function(tf,adc){
   length(readLines(tf))-length(adc$contents)
 }
 
+# is_rmd function [sinew] ---- 
 is_rmd <- function(adc){
   any(grepl('^```\\{(.*?)r',adc$contents))
 }
 
+# find_chunks function [sinew] ---- 
 find_chunks <- function(adc){
   lc <- list_chunks(adc$contents)
   ld <- do.call('rbind',lapply(seq_along(lc),function(x) data.frame(id=x,idx = lc[[x]])))

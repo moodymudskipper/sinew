@@ -1,3 +1,4 @@
+# check_attach function [sinew] ---- 
 check_attach <- function(x, nenv) {
   fn <- gsub("^(.*?)::", "", x)
   pkg <- gsub("::(.*?)$", "", x)

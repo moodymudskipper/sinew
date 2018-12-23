@@ -1,4 +1,6 @@
+# .onLoad roxy [sinew] ---- 
 #' @importFrom yaml yaml.load_file
+# .onLoad function [sinew] ----
 .onLoad <- function(libname, pkgname) {
   config_file <- file.path(getwd(), "_sinewconfig.yml")
 
@@ -19,6 +21,7 @@
     register_completion(thispkg = populate)
 }
 
+# .onAttach function [sinew] ---- 
 .onAttach <- function(libname, pkgname) {
   config_file <- file.path(getwd(), "_sinewconfig.yml")
 

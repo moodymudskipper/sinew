@@ -1,3 +1,4 @@
+# rm.oxylines function [sinew] ---- 
 rm.oxylines <- function(this) {
   idx <- grep("^\\s*#'", this$contents)
   if (length(idx) > 0) {
@@ -26,6 +27,7 @@ rm.oxylines <- function(this) {
   return(NULL)
 }
 
+# seqle function [sinew] ---- 
 seqle <- function(x, incr=1) {
   if (!is.numeric(x)) x <- as.numeric(x)
   n <- length(x)
