@@ -46,7 +46,7 @@ append_collapse <- function(lines){
   
   on.exit(unlink(tf),add = TRUE)
   
-  lines <- lines[!grepl('\\[sinew\\] ----',lines)]
+  lines <- strip_tags(lines)
   
   cat(lines,file = tf,sep = '\n')
   
@@ -61,8 +61,10 @@ append_collapse <- function(lines){
   
   parent_idx <- which(tf_data$parent==0)
   tf_data$group[tf_data$parent==0] <- tf_data$id[tf_data$parent==0]
+  rm_comment_idx <- tf_data$group[parent_idx[!grepl('function\\(',tf_data$text[parent_idx])]]
   tf_data$group[parent_idx[!grepl('function\\(',tf_data$text[parent_idx])]] <- NA
-
+  tf_data$group[tf_data$parent%in%-c(rm_comment_idx)] <- NA
+  
   tf_data_filter <- tf_data[!is.na(tf_data$group),]
   tf_data_split <- split(tf_data_filter,tf_data_filter$group)
   collapse_exits <- sapply(tf_data_split,function(x) grepl('\\[sinew\\] ----',x$text[1]))
